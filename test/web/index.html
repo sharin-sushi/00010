@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta httpequiv="ContentType"content="text/html;charset=utf8">
+        <title>記事一覧</title>
+    </head>
+    <body>
+        <p><a href="/create">新規作成</a></p>
+        <table border="1">
+            <thead>
+            <tr>
+              <td>Id</td>
+              <td>Title</td>
+              <td>Show</td>
+              <td>Edit</td>
+              <td>Del</td>
+            </tr>
+             </thead>
+             <tbody>
+        {{ range . }}
+            <tr>
+                <td>{{ .Id }}</td>
+                <td> {{ .Title }} </td>
+                <td> <a href="/show?id={{ .Id }}">表示</a> </td>
+                <td> <a href="/edit?id={{ .Id }}">編集</a> </td>
+                <td> <a href="/delete?id={{ .Id }}">削除</a> </td>
+            </tr>
+    {{ end }}
+        </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta httpequiv="ContentType"content="text/html;charset=utf8">
+        <title>記事編集(ID:{{.Id}})</title>
+    </head>
+    <body>
+        <form method="POST" action="edit">
+            <input type="hidden" name="id" value="{{ .Id }}" />
+            <p>タイトル： <input type="text" name="title" value="{{.Title}}" /></p>
+            <p>本文：</p>
+            <p><textarea name="body" rows="10" cols="40">{{.Body}}</textarea></p>
+            <p><input type="submit" value="更新" /> 
+                <a href="/index"><input type="button" value="戻る" /></a></p>
+        </form>
+    </body>
+</html>
