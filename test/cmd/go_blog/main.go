@@ -16,10 +16,10 @@ func main() {
 	// http.HandleFunc("/secret", utility.Oimo)
 	// http.HandleFunc("/", handler)
 	http.HandleFunc("/", article.Index)
-	http.HandleFunc("/show", article.Show)
-	http.HandleFunc("/create", article.Create)
-	http.HandleFunc("/edit", article.Edit)
-	http.HandleFunc("/delete", article.Delete)
+	//   http.HandleFunc("/show", article.Show)
+	//   http.HandleFunc("/create", article.Create)
+	// http.HandleFunc("/edit", article.Edit)
+	// http.HandleFunc("/delete", article.Delete)
 
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal("ListenAndServe:", err)
