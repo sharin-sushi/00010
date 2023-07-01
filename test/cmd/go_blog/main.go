@@ -1,6 +1,7 @@
 package main
 
 //参考　https://www.yoheim.net/blog.php?q=20170403
+// https://zenn.dev/ajapa/articles/03dcf8fd12d086
 
 import (
 	"log"
