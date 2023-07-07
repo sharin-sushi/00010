@@ -9,11 +9,11 @@
         <table border="1">
             <thead>
             <tr>
-              <td>Unique_id</td>
-              <td>Movie</td>
+              <td>固有ID</td>
+              <td>動画タイトル</td>
               <td>Url</td>
-              <td>SingStart</td>
-	          <td>Song</td>
+              <td>歌い出し</td>
+	          <td>曲名</td>
               <td>Show</td>
               <td>Edit</td>
               <td>Del</td>
@@ -27,10 +27,12 @@
                 <td> {{ .Url }} </td>
                 <td> {{ .SingStart }} </td>
                 <td> {{ .Song }} </td>
-                <td> <a href="/show?id={{ .Unique_id }}">表示</a> </td>
-                <td> <a href="/edit?id={{ .Unique_id }}">編集</a> </td>
-                <td> <a href="/delete?id={{ .Unique_id }}">削除</a> </td>
+                <td> <a href="/show?Unique_id={{ .Unique_id }}">表示</a> </td>
+                <td> <a href="/edit?Unique_id={{ .Unique_id }}">編集</a> </td>
+                <td> <a href="/delete?Unique_id={{ .Unique_id }}">削除</a> </td>
+                <!-- ここだけ変更後の反映が遅い -->
             </tr>
+
     {{ end }}
         </tbody>
         </table>
