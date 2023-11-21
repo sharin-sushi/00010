@@ -11,11 +11,12 @@
         <p>URL : {{.Url}}</p>
         <p>歌い出し：{{.SingStart}}</p>
         <p>曲名：{{.Song}}</p> 
-
-        <a href="{{.Url}}?t={{.SingStart}}"><input type="button" value="動画へ" /></a>
+        <a href="{{.Url}} "><input type="button" value="動画へ" /></a>
         <!-- htmlじゃ無理？goでurl生成の関数使うか、JSで動的にするか…？ -->
             <!-- }{は×、 -->
         
+                <!-- &?feature=share&t= {{.SingStart}} -->
+
         <p><a href="/edit?id={{.Unique_id}}"><input type="button" value="編集" /></a>
         <a href="/index"><input type="button" value="戻る" /></a></p>
      </body>

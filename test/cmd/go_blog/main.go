@@ -14,9 +14,8 @@ import (
 //ファイル名じゃないから注意
 
 func main() {
-	// http.HandleFunc("/secret", utility.Oimo)
-	// http.HandleFunc("/", handler)
 	http.HandleFunc("/", article.Index)
+	// 第１引数(パス)へアクション(リクエストアクション？アクセス？)が有った際に、第２引数(関数)を呼び出す。
 	http.HandleFunc("/show", article.Show)
 	http.HandleFunc("/create", article.Create)
 	http.HandleFunc("/edit", article.Edit)
@@ -25,6 +24,7 @@ func main() {
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
+
 }
 
 //fmt.Fprint()の第２引数はstring型である必要があり、引用元の関数を

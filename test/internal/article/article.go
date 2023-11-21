@@ -18,17 +18,8 @@ type karaokelist struct {
 	Song      string `db:"song"`
 }
 
-//`db:"unique_id"`は関数外に書いたら意味ないらしい↑意味ない
-//  Unique_id int    `db:"unique_id"`
-// 	Movie     string `db:"movie"`
-// 	Url       string `db:"url"`
-// 	SingStart string `db:"singStart"`
-// 	Song      string `db:"song"`
-
-// Unique_id, Movie, Url, SingStart, Song
-// unique_id, movie, url, singStart, song
-
-// db:"カラム名"という形式のタグを使用して、
+//関数外に書いたら意味ないらしい?
+// `db:"カラム名"` という形式のタグを使用して、
 // 構造体のフィールドとデータベースのカラムを対応付け
 //https://leben.mobi/go/post-370/practice/#Query_8211_SELECT
 
@@ -134,7 +125,21 @@ func Show(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("Failed to execute template: %s", err)
 		log.Fatal(err)
 	}
+
+	// Makelink()
 }
+
+// url生成しようかと思ったけどJSやるからいいや
+// func Makelink() {
+// 	var ybLink *template.Template
+// 	ybLink = template.Must(template.ParseFiles("show.html"))
+// 	var Utube = "&t="
+// 	err := ybLink.Execute(os.Stdout, Utube) // dataは渡さない
+// 	if err != nil {
+// 		log.Fatalln(err)
+// 	}
+
+// }
 
 func Create(w http.ResponseWriter, r *http.Request) {
 	kList := karaokelist{}
@@ -186,7 +191,7 @@ func Edit(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			panic(err.Error())
 		}
-		// ↓変更する
+		// updata処理
 		kList := karaokelist{}
 		for selected.Next() {
 			err = selected.Scan(&kList.Unique_id, &kList.Movie, &kList.Url, &kList.SingStart, &kList.Song)
